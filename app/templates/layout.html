@@ -1,0 +1,33 @@
+<!-- Main layout to be extended by all child templates -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }} | HIGDA - DHIS </title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/palette.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    {% block links %} {% endblock %}
+    {% block scripts %} {% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand topnav" href="{{ url_for('home.index') }}">Hello Life</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <!--Enter links here  -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="main">
+      {% block body %}
+      {% endblock %}
+    </main>
+    </div>
+  </body>
+</html>

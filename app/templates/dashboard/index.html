@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scripts.js') }}">
+</script> 
+{% endblock %}
+{% block body %}
+<!-- Unique child elements go here -->
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row no-gutter">
+        <div class="col-sm-3">
+
+
+
+          <div class="container-fluid bar">
+            <ul class="list-inline">
+              <li><a href="">Line</a></li>
+              <li><a href="">Bar</a></li>
+              <li><a href="">Stacked</a></li>
+              <li><a href="">Gauge</a></li>
+              <li><a href="">Pie</a></li>
+              <li><a href="">Combined</a></li>
+            </ul>
+          </div>
+
+
+
+          <div class="container-fluid">
+            <div class="row">
+              
+              <!-- Data -->
+              <div class="hs-wrapper">
+                <div class="">
+                  <span>Data</span>
+                </div>
+                <!--Selection dropdowns here  -->
+                <select id="data-indicators" class="form-control">
+                  <option value="">Select Indicator</option>
+                  <option value="None">[All Indicators]</option>
+                </select>
+                <div class="container-fluid">
+                  <div class="row">
+                    <!--For data that is available from api  -->
+                    <div class="dt-wrapper col-xs-12">
+                      <div class="row">
+                        <nav class="">
+                          <span>Selected</span>
+                        </nav>
+                      </div>
+                      <div class="row">
+                        <div class="av-wrapper">
+                          <ul class="list-group data-selected">
+                            <!-- <li class="data-av list-group-item active"><span></span></li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Periods -->
+              <div class="hs-wrapper">
+                <div class="">
+                  <span>Periods</span>
+                </div>
+                <!--Selection dropdown here  -->
+                <select class="form-control">
+                  <option value="">Select Period</option>
+                </select>
+              </div>
+
+
+              <!-- Organisation Units -->
+              <div class="hs-wrapper">
+                <div class="">
+                  <span>Organisation Units</span>
+                </div>
+                <!--Selection dropdown here  -->
+                <select id="levels" class="form-control">
+                  <option value="">Select Organisation Unit</option>
+                  <option value="1">Level 1</option>
+                  <option value="2">Level 2</option>
+                  <option value="3">Level 3</option>
+                  <option value="3">Level 4</option>
+                </select>
+                <div class="container-fluid">
+                  <div class=row>
+                    <div class="dt-wrapper col-xs-12">
+                      <div class="row">
+                        <nav class="">
+                          <span>Level</span>
+                        </nav>
+                      </div>
+                      <div class="row">
+                        <div class="lv-wrapper">
+                          <ul class="list-group data-selected">
+                            <!-- Ajax Populates values here -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Visualisations Go here -->
+        <!-- Charts and -->
+        <div class="col-sm-9">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="charts">
+                <nav class="nav">
+                  <button id="chart-display" type="" class="button">Update</button>
+                </nav>
+                <div class="presentation" id="presentation">
+                  <div id="component"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

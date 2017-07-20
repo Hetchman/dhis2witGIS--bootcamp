@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/c3.css') }}">
+{% endblock %}
+
+<!--Scripts for chart visualizations  -->
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/d3.v3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/c3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock %}
+
+<!--Main section  -->
+{% block main %}
+<section>
+   <h1>Charts</h1>
+   <div id="chart">
+      
+   </div>
+</section>
+{% endblock %}
